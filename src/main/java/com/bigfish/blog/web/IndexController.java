@@ -1,5 +1,6 @@
 package com.bigfish.blog.web;
 
+import com.bigfish.blog.NotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -8,7 +9,10 @@ public class IndexController {
 
         @GetMapping("/")
         public String index(){
-            int s = 1/0;
+            String blog = null;
+            if (blog == null){
+                throw new NotFoundException("no blog");
+            }
             return "index";
         }
 
