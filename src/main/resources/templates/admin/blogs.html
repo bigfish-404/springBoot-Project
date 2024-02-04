@@ -41,9 +41,9 @@
             通过在 <h2> 元素中使用 "item" 类，可以将标题 "MyBlog" 作为一个单独的列表项或卡片显示，并提供与之交互的功能和操作。
             例如，可以在标题上添加链接，使用户可以单击标题以转到网站的主页或其他相关页面。-->
             <h2 class="ui teal header item">管理后台</h2>
-            <a href="#" class="item"><i class="home icon"></i> MyBlog</a>
-            <a href="#" class="item"><i class="idea icon"></i> 分类</a>
-            <a href="#" class="item"><i class="tags icon"></i> 标签</a>
+            <a href="#" th:href="@{/admin/blogs}" class="item" ><i class="home icon"></i> MyBlog</a>
+            <a href="#" th:href="@{/type}" class="item"><i class="idea icon"></i> 分类</a>
+            <a href="#" th:href="@{/tags}" class="item"><i class="tags icon"></i> 标签</a>
 
             <div class="right dropdown menu">
                 <!--transparent：透明的-->
@@ -63,7 +63,11 @@
         </div>
     </div>
 </nav>
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <!--中间内容-->
 <!--div定义html里面的一个分区或者块-->
 
@@ -149,7 +153,13 @@
         </table>
     </div>
 </div>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <!--底部内容-->
 <!--footer代表底部的的意思，都是实现分块，但是名字不同增加代码的可读性-->
 <!--"vertical segment" 类用于指定该元素为垂直方向的段落，并提供适当的上下边距。-->

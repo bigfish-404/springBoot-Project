@@ -1541,3 +1541,38 @@ org.springframework.web.HttpRequestMethodNotSupportedException: Request method '
 	at java.base/java.lang.Thread.run(Thread.java:833)
 
 2024-02-04T17:07:54.680+09:00  WARN 87160 --- [http-nio-8082-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-02-04T17:19:35.476+09:00  WARN 87160 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m26s85ms).
+2024-02-04T17:59:45.154+09:00  INFO 87160 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-04T17:59:45.194+09:00  INFO 87160 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-04T17:59:45.232+09:00  INFO 87160 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-02-04T17:59:48.948+09:00  INFO 89389 --- [restartedMain] c.b.blog.SpringBootProjectApplication    : Starting SpringBootProjectApplication using Java 18.0.2 with PID 89389 (/Users/bigfish/IdeaProjects/springBoot-p/springBoot-Project/target/classes started by bigfish in /Users/bigfish/IdeaProjects/springBoot-p/springBoot-Project)
+2024-02-04T17:59:48.948+09:00 DEBUG 89389 --- [restartedMain] c.b.blog.SpringBootProjectApplication    : Running with Spring Boot v3.1.4, Spring v6.0.12
+2024-02-04T17:59:48.948+09:00  INFO 89389 --- [restartedMain] c.b.blog.SpringBootProjectApplication    : The following 1 profile is active: "dev"
+2024-02-04T17:59:48.963+09:00  INFO 89389 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-04T17:59:48.963+09:00  INFO 89389 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-04T17:59:49.166+09:00  INFO 89389 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-04T17:59:49.187+09:00  INFO 89389 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+2024-02-04T17:59:49.461+09:00  INFO 89389 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-02-04T17:59:49.465+09:00  INFO 89389 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-04T17:59:49.465+09:00  INFO 89389 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2024-02-04T17:59:49.487+09:00  INFO 89389 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-04T17:59:49.487+09:00  INFO 89389 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 523 ms
+2024-02-04T17:59:49.556+09:00  INFO 89389 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-04T17:59:49.575+09:00  INFO 89389 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
+2024-02-04T17:59:49.576+09:00  INFO 89389 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-02-04T17:59:49.614+09:00  INFO 89389 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-02-04T17:59:49.640+09:00  INFO 89389 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-04T17:59:49.643+09:00  INFO 89389 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-04T17:59:49.803+09:00  INFO 89389 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@20966406
+2024-02-04T17:59:49.803+09:00  INFO 89389 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-04T17:59:49.895+09:00  INFO 89389 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2024-02-04T17:59:50.099+09:00  INFO 89389 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-02-04T17:59:50.183+09:00  INFO 89389 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-04T17:59:50.431+09:00  WARN 89389 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-04T17:59:50.541+09:00  INFO 89389 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-02-04T17:59:50.703+09:00  INFO 89389 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-02-04T17:59:50.719+09:00  INFO 89389 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-02-04T17:59:50.724+09:00  INFO 89389 --- [restartedMain] c.b.blog.SpringBootProjectApplication    : Started SpringBootProjectApplication in 2.029 seconds (process running for 2.545)
+2024-02-04T17:59:55.151+09:00  INFO 89389 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-04T17:59:55.152+09:00  INFO 89389 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-02-04T17:59:55.158+09:00  INFO 89389 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
