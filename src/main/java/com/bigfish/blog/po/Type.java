@@ -1,5 +1,4 @@
 package com.bigfish.blog.po;
-
 import jakarta.persistence.*;
 
 import java.util.ArrayList;

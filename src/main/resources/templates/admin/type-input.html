@@ -2,13 +2,19 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <!--meta 原标签-->
 
+    <!-- - "content=device-width" 将视口的宽度设置为正在查看网页的设备的宽度。这意味着网页将根据设备的宽度调整其布局，而不是使用固定宽度。
+    - "initial-scale=1.0" 将网页的初始缩放级别设置为100%。这确保了网页在首次加载时以其原始大小显示。
+    - content（目录） device(装置）  initial（初始） scale（改变尺寸大小）-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>发布Blog</title>
+    <title>分類input</title>
 
+    <!--导入Semantic UI 框架，在首尾都需要引入-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
     <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css">
-    <link rel="stylesheet" href="../../static/css/me.css"  >
+    <!--必须引入css代码的位置-->
+    <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}" >
 </head>
 <body>
 
@@ -17,13 +23,13 @@
     <div class="ui container">
 
         <div class="ui inverted secondary stackable menu">
-
             <h2 class="ui teal header item">管理后台</h2>
             <a href="#" class="item"><i class="home icon"></i> MyBlog</a>
             <a href="#" class="item"><i class="idea icon"></i> 分类</a>
             <a href="#" class="item"><i class="tags icon"></i> 标签</a>
 
             <div class="right dropdown menu">
+                <!--transparent：透明的-->
                 <div class="ui inline dropdown item">
                     <div class="text">
                         <img class="ui avatar image" src="../web/images/1.jpg" alt="">
@@ -82,28 +88,55 @@
                     </div>
                 </div>
             </div>
-
+            <div class="field">
+                <div class="ui left labeled action input">
+                    <label class="ui compact teal basic label">标签</label>
+                    <div class="ui fluid multiple search selection dropdown">
+                        <input type="hidden" name="tag">
+                        <i class="ui dropdown icon"></i>
+                        <div class="text">标签</div>
+                        <div class="menu">
+                            <div class="item" data-value="java">java</div>
+                            <div class="item" data-value="MYSQL">MYSQL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="field ">
                 <div class="ui left labeled input">
                     <label class="ui teal basic label">首图</label>
                     <input type="text" name="indexPicture" placeholder="首图引用地址">
                 </div>
             </div>
-
         </div>
 
-        <div class="field">
-            <div style="z-index: 1 !important;">
-                <textarea placeholder="笔记内容简介" name="desc" th:text="${blog}!=null ? ${blog.desc}" ></textarea>
+        <div class="inline fields">
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" id="recommend" name="recommend" checked class="hidden">
+                    <label for="recommend" >推荐</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" id="info" name="info" class="hidden">
+                    <label for="info" >转载声明</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" id="appreciation" name="appreciation" class="hidden">
+                    <label for="appreciation" >赞赏</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" id="comment" name="comment" class="hidden">
+                    <label for="comment" >评论</label>
+                </div>
             </div>
         </div>
 
-        <div class="field">
-            <div class="ui checkbox">
-                <input type="checkbox" id="comment" name="comment" class="hidden">
-                <label for="comment" >评论</label>
-            </div>
-        </div>
 
         <div class="ui right aligned container">
             <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
@@ -114,7 +147,10 @@
 </div>
 
 <!--底部内容-->
+<!--footer代表底部的的意思，都是实现分块，但是名字不同增加代码的可读性-->
+<!--"vertical segment" 类用于指定该元素为垂直方向的段落，并提供适当的上下边距。-->
 <footer class="ui inverted vertical segment m-padded-tb-massive">
+
     <div class="ui center aligned container">
 
         <div class="ui inverted divided grid">
@@ -132,15 +168,15 @@
             <div class="four wide column">
                 <div class="ui inverted link list">
                     <h4 class="ui inverted header m-opacity-mini">联系作者</h4>
-                    <a href="#" class="item">名前：BigFish</a>
-                    <a href="#" class="item">メール：xualert123@gmail.com</a>
-                    <a href="#" class="item">アドレス：日本 东京</a>
+                    <a href="#" class="item">姓名：BigFish</a>
+                    <a href="#" class="item">邮箱：bigfish.alert@gmail.com</a>
+                    <a href="#" class="item">地址：日本 东京</a>
                 </div>
             </div>
             <div class="five wide column">
                 <div class="ui inverted link list">
-                    <h4 class="ui inverted header m-opacity-mini">SNS情報</h4>
-                    <a class="item">https://github.com/bigfish-404/springBoot-Project</a>
+                    <h4 class="ui inverted header m-opacity-mini">心情</h4>
+                    <a class="item">生活不止眼前的苟且，还有诗和远方。</a>
                 </div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,26 +11,26 @@
 <body>
 
 <!--メニュー-->
-    <nav class="ui inverted attached segment">
-        <div class="ui container">
-            <div class="ui inverted secondary menu">
-                <h2 class="ui teal header item">BigFish</h2>
-                <a href="#" class="item"><i class="icon home"></i>ホームページ</a>
-                <a href="#" class="item"><i class="icon idea"></i>分類</a>
-                <a href="#" class="item"><i class="icon tags"></i>タグ</a>
-                <a href="#" class="item"><i class="icon info"></i>自己紹介</a>
+<nav class="ui inverted attached segment">
+    <div class="ui container">
+        <div class="ui inverted secondary menu">
+            <h2 class="ui teal header item">BigFish</h2>
+            <a href="#" class="item"><i class="icon home"></i>ホームページ</a>
+            <a href="#" class="item"><i class="icon idea"></i>分類</a>
+            <a href="#" class="item"><i class="icon tags"></i>タグ</a>
+            <a href="#" class="item"><i class="icon info"></i>自己紹介</a>
 
-                <!--検索ボックス-->
-                <div class="right item">
-                    <div class="ui icon input">
-                        <input type="text" placeholder="Search...">
-                        <i class="search link icon"></i>
-                    </div>
+            <!--検索ボックス-->
+            <div class="right item">
+                <div class="ui icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search link icon"></i>
                 </div>
-
             </div>
+
         </div>
-    </nav>
+    </div>
+</nav>
 
 <!--主体-->
 <div class="m-container-small m-padded-tb">
@@ -208,8 +209,8 @@
     </div>
 </div>
 
-    <!--footer-->
-    <footer class="ui inverted vertical segment m-padded-tb-massive">
+<!--footer-->
+<footer class="ui inverted vertical segment m-padded-tb-massive">
 
     <div class="ui center aligned container">
 

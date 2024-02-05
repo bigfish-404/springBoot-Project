@@ -26,7 +26,8 @@ public class LoginController {
     // ログインページへのGETリクエストを処理
     @GetMapping
     public String loginPage() {
-        return "admin/login";  // admin/login.htmlテンプレートを返す
+
+        return "login";  // admin/login.htmlテンプレートを返す
     }
 
     // ログインフォームのPOSTリクエストを処理
@@ -41,7 +42,7 @@ public class LoginController {
         if (user != null) {
             // ユーザーが認証された場合、セッションにユーザーオブジェクトを保存し、ログイン後のページにリダイレクト
             session.setAttribute("user", user);
-            return "admin/login-index";
+            return "loginSucceed";
         } else {
             // ユーザーが認証されなかった場合、エラーメッセージをフラッシュ属性に追加してログインページにリダイレクト
             attributes.addFlashAttribute("message", "ユーザー名またはパスワードが正しくありません");

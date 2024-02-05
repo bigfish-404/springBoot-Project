@@ -1,13 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>发布Blog</title>
+    <title>編集Blog</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
-    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css">
+    <link rel="stylesheet" href="../../static/lib/editormd.min.css">
     <link rel="stylesheet" href="../../static/css/me.css"  >
 </head>
 <body>
@@ -18,10 +20,10 @@
 
         <div class="ui inverted secondary stackable menu">
 
-            <h2 class="ui teal header item">管理后台</h2>
-            <a href="#" class="item"><i class="home icon"></i> MyBlog</a>
-            <a href="#" class="item"><i class="idea icon"></i> 分类</a>
-            <a href="#" class="item"><i class="tags icon"></i> 标签</a>
+            <h2 class="ui teal header item">編集Blog</h2>
+            <a href="/index" class="item"><i class="home icon"></i> MyBlog</a>
+            <a href="#" class="item"><i class="idea icon"></i> 分類</a>
+            <a href="#" class="item"><i class="tags icon"></i> 自己紹介</a>
 
             <div class="right dropdown menu">
                 <div class="ui inline dropdown item">
@@ -29,11 +31,9 @@
                         <img class="ui avatar image" src="../web/images/1.jpg" alt="">
                         BigFish
                     </div>
-                    <i class="dropdown icon"></i>
-                    <div class="menu">
-                        <div class="item">
-                            <a href="#" class="ui item">注销</a>
-                        </div>
+                    <i class=" dropdown icon"></i>
+                    <div class="ui menu">
+                        <a href="#" th:href="@{/admin/logout}" class="ui inverted item">注销</a>
                     </div>
                 </div>
             </div>
@@ -43,11 +43,11 @@
 
 <!--中间内容-->
 <div class="m-container-small m-padded-tb-big">
-    <form action="#" method="post" class="ui form">
+    <form action="inputSubmit" method="post" class="ui form">
         <div class="field">
             <div class="ui left labeled input">
                 <div class="ui selection compact teal basic dropdown label">
-                    <input type="hidden" value="原创">
+                    <input type="hidden" name="flagValue"  value="原创">
                     <i class="ui dropdown icon"></i>
                     <div class=" text">原创</div>
                     <div class="menu">
@@ -55,6 +55,7 @@
                         <div class="item" data-value="翻译">翻译</div>
                         <div class="item" data-value="历史">历史</div>
                     </div>
+
                 </div>
                 <input type="text" name="title" placeholder="标题">
             </div>
@@ -94,7 +95,7 @@
 
         <div class="field">
             <div style="z-index: 1 !important;">
-                <textarea placeholder="笔记内容简介" name="desc" th:text="${blog}!=null ? ${blog.desc}" ></textarea>
+                <textarea placeholder="笔记内容简介" name="content" th:text="${blog}!=null ? ${blog.desc}" ></textarea>
             </div>
         </div>
 
@@ -107,8 +108,7 @@
 
         <div class="ui right aligned container">
             <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
-            <div class="ui secondary button">保存</div>
-            <div class="ui secondary button">发布</div>
+            <button class="ui secondary button">发布</button>
         </div>
     </form>
 </div>
