@@ -24,21 +24,27 @@ public class InputController {
 
     @PostMapping
     public String saveInput(
-            @RequestParam("flagValue") String flagValue,
             @RequestParam("title") String title,
+            @RequestParam("flagValue") String flagValue,
+            @RequestParam("preview") String preview,
             @RequestParam("content") String content,
+            @RequestParam("category") String category,
             @RequestParam("indexPicture") String indexPicture,
-            @RequestParam("comment") boolean comment)
+            @RequestParam(name = "comment", defaultValue = "false")boolean comment)
     {
         Input input = new Input();
         input.setTitle(title);
         input.setContent(content);
+        input.setPreview(preview);
         input.setFlag(flagValue);
+        input.setCategory(category);
         input.setFirstPicture(indexPicture);
         input.setCommentAble(comment);
+        input.setCreateTime(formattedTime);
+        input.setUpdateTime(formattedTime);
 
         inputService.saveInput(input);
-        return "index";
+        return "loginSucceed";
     }
 
 }

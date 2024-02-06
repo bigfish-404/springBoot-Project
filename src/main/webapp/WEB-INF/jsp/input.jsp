@@ -33,7 +33,7 @@
                     </div>
                     <i class=" dropdown icon"></i>
                     <div class="ui menu">
-                        <a href="#" th:href="@{/admin/logout}" class="ui inverted item">注销</a>
+                        <a href="#" th:href="@{/admin/logout}" class="ui inverted item">ログアウト</a>
                     </div>
                 </div>
             </div>
@@ -47,38 +47,37 @@
         <div class="field">
             <div class="ui left labeled input">
                 <div class="ui selection compact teal basic dropdown label">
-                    <input type="hidden" name="flagValue"  value="原创">
+                    <input type="hidden" name="flagValue"  value="オリジナル">
                     <i class="ui dropdown icon"></i>
-                    <div class=" text">原创</div>
+                    <div class=" text">オリジナル</div>
                     <div class="menu">
-                        <div class="item" data-value="原创">原创</div>
-                        <div class="item" data-value="翻译">翻译</div>
-                        <div class="item" data-value="历史">历史</div>
+                        <div class="item" data-value="オリジナル">オリジナル</div>
+                        <div class="item" data-value="Translate">Translate</div>
+                        <div class="item" data-value="歴史">歴史</div>
                     </div>
 
                 </div>
-                <input type="text" name="title" placeholder="标题">
+                <input type="text" name="title" placeholder="テーマ">
             </div>
         </div>
 
         <div class="required field">
             <div id="md-content" style="z-index: 1 !important;">
-                <textarea placeholder="博客内容" name="content" style="display: none">
+                <textarea placeholder="Blog内容" name="content" style="display: none">
                 </textarea>
             </div>
         </div>
 
         <div class="two fields">
             <div class="field">
-                <div class="ui left labeled action input">
-                    <label class="ui compact teal basic label">分类</label>
-                    <div class="ui fluid selection dropdown">
-                        <input type="hidden">
+                <div class="ui  left  labeled action input">
+                    <div class="ui fluid selection teal basic dropdown label">
+                        <input type="hidden" name ="category">
                         <i class="ui dropdown icon"></i>
-                        <div class="text">分类</div>
-                        <div class="menu">
-                            <div class="item" data-value="1">错误日志</div>
-                            <div class="item" data-value="2">开发者手册</div>
+                        <div class="ui teal basic text" name ="category" >分類</div>
+                        <div class="menu" >
+                            <div class="item" data-value="ITニュース">ITニュース</div>
+                            <div class="item" data-value="練習">練習</div>
                         </div>
                     </div>
                 </div>
@@ -86,35 +85,40 @@
 
             <div class="field ">
                 <div class="ui left labeled input">
-                    <label class="ui teal basic label">首图</label>
-                    <input type="text" name="indexPicture" placeholder="首图引用地址">
+                    <label class="ui teal basic label">写真</label>
+                    <input type="text" name="indexPicture" placeholder="写真">
                 </div>
             </div>
 
         </div>
-
         <div class="field">
             <div style="z-index: 1 !important;">
-                <textarea placeholder="笔记内容简介" name="content" th:text="${blog}!=null ? ${blog.desc}" ></textarea>
+                <textarea placeholder="プレビュー" name="preview" th:text="${blog}!=null ? ${blog.desc}" style="height: 100px" ></textarea>
+            </div>
+        </div>
+        <div class="field">
+            <div style="z-index: 1 !important;">
+                <textarea placeholder="内容" name="content" th:text="${blog}!=null ? ${blog.desc}" style="height: 300px" ></textarea>
             </div>
         </div>
 
         <div class="field">
             <div class="ui checkbox">
-                <input type="checkbox" id="comment" name="comment" class="hidden">
-                <label for="comment" >评论</label>
+                <input type="checkbox" name="comment" id="comment" class="hidden" value="false">
+                <label for="comment">コメント</label>
             </div>
         </div>
 
         <div class="ui right aligned container">
-            <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
-            <button class="ui secondary button">发布</button>
+            <button type="button" class="ui button" onclick="window.history.go(-1)">戻り</button>
+            <button class="ui secondary button">commit</button>
         </div>
     </form>
 </div>
 
 <!--底部内容-->
-<footer class="ui inverted vertical segment m-padded-tb-massive">
+<<footer class="ui inverted vertical segment m-padded-tb-massive">
+
     <div class="ui center aligned container">
 
         <div class="ui inverted divided grid">

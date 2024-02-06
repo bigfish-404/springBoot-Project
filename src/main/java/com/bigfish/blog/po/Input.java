@@ -9,29 +9,30 @@ import java.util.Date;
 public class Input {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     //标题
     private String title;
+    //preview
+    private String preview;
     //内容
     private String content;
     //标记
     private String flag;
+    private String category;
     //首图
     private String firstPicture;
     //评论开启
     private boolean commentAble;
     //创建时间
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createTime;
+    private String  createTime;
     //更新时间
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updateTime;
+    private String  updateTime;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -75,14 +76,36 @@ public class Input {
         this.commentAble = commentAble;
     }
 
-    @PrePersist
-    protected void onCreate() {
-        createTime = new Date();
+    public String  getCreateTime() {
+        return createTime;
     }
 
-    @PreUpdate
-    protected void onUpdate() {
-        updateTime = new Date();
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public String getPreview() {
+        return preview;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setPreview(String preview) {
+        this.preview = preview;
     }
 
     @Override
