@@ -28,7 +28,6 @@ public class InputController {
             @RequestParam("flagValue") String flagValue,
             @RequestParam("preview") String preview,
             @RequestParam("content") String content,
-            @RequestParam("category") String category,
             @RequestParam("indexPicture") String indexPicture,
             @RequestParam(name = "comment", defaultValue = "false")boolean comment)
     {
@@ -37,14 +36,13 @@ public class InputController {
         input.setContent(content);
         input.setPreview(preview);
         input.setFlag(flagValue);
-        input.setCategory(category);
         input.setFirstPicture(indexPicture);
         input.setCommentAble(comment);
         input.setCreateTime(formattedTime);
         input.setUpdateTime(formattedTime);
 
         inputService.saveInput(input);
-        return "loginSucceed";
+        return "publishSucceed";
     }
 
 }

@@ -22,7 +22,7 @@
 
             <h2 class="ui teal header item">編集Blog</h2>
             <a href="/index" class="item"><i class="home icon"></i> MyBlog</a>
-            <a href="#" class="item"><i class="idea icon"></i> 分類</a>
+            <a href="/type" class="item"><i class="idea icon"></i> 分類</a>
             <a href="#" class="item"><i class="tags icon"></i> 自己紹介</a>
 
             <div class="right dropdown menu">
@@ -33,7 +33,7 @@
                     </div>
                     <i class=" dropdown icon"></i>
                     <div class="ui menu">
-                        <a href="#" th:href="@{/admin/logout}" class="ui inverted item">ログアウト</a>
+                        <a href="#"  class="ui inverted item">ログアウト</a>
                     </div>
                 </div>
             </div>
@@ -68,29 +68,12 @@
             </div>
         </div>
 
-        <div class="two fields">
-            <div class="field">
-                <div class="ui  left  labeled action input">
-                    <div class="ui fluid selection teal basic dropdown label">
-                        <input type="hidden" name ="category">
-                        <i class="ui dropdown icon"></i>
-                        <div class="ui teal basic text" name ="category" >分類</div>
-                        <div class="menu" >
-                            <div class="item" data-value="ITニュース">ITニュース</div>
-                            <div class="item" data-value="練習">練習</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="field ">
                 <div class="ui left labeled input">
                     <label class="ui teal basic label">写真</label>
                     <input type="text" name="indexPicture" placeholder="写真">
                 </div>
             </div>
-
-        </div>
         <div class="field">
             <div style="z-index: 1 !important;">
                 <textarea placeholder="プレビュー" name="preview" th:text="${blog}!=null ? ${blog.desc}" style="height: 100px" ></textarea>

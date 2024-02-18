@@ -22,7 +22,7 @@
         <div class="ui inverted secondary menu">
             <h2 class="ui teal header item">BigFish</h2>
             <a href="/index" class="item"><i class="icon home"></i>ホームページ</a>
-            <a href="/type" class="item"><i class="icon idea"></i>分類</a>
+            <a href="/backstage" class="item"><i class="icon idea"></i>分類</a>
             <a href="/input" class="item"><i class="icon tags"></i>編集</a>
             <a href="#" class="item"><i class="icon info"></i>自己紹介</a>
 
@@ -67,7 +67,7 @@
                 <div class="ui grid">
 
                     <div class="eleven wide column">
-                        <a href="#" class="ui header"><%= input.getTitle() %>
+                        <a href="/blog?id=<%= input.getId() %>" class="ui header"><%= input.getTitle() %>
                         </a>
                         <div class="ui inverted selected divider"></div>
                         <p><%= input.getPreview() %>

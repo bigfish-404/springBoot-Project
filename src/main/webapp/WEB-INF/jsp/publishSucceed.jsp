@@ -1,42 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <!--meta 原标签-->
 
-    <!-- - "content=device-width" 将视口的宽度设置为正在查看网页的设备的宽度。这意味着网页将根据设备的宽度调整其布局，而不是使用固定宽度。
-    - "initial-scale=1.0" 将网页的初始缩放级别设置为100%。这确保了网页在首次加载时以其原始大小显示。
-    - content（目录） device(装置）  initial（初始） scale（改变尺寸大小）-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>登录成功</title>
+    <title>publishSucceed</title>
 
-    <!--导入Semantic UI 框架，在首尾都需要引入-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
-
-    <!--必须引入css代码的位置-->
     <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}" >
 </head>
 <body>
 
-
 <nav class="ui inverted attached segment m-padded-tb-mini">
 
-    <!--"container" 类用于指定该元素为容器，它将具有固定的最大宽度，并在中央对齐。
-    通过在 <div> 元素中使用这些类， 可以轻松地创建具有居中对齐和固定宽度的容器，并使用CSS进行进一步的样式设置。-->
     <div class="ui container">
 
-        <!--"secondary" 类用于指定该元素为次要的导航菜单，通常用于显示不那么重要的链接和菜单项。
-            stackable:可堆叠的意思，屏幕小了会自动堆叠-->
         <div class="ui inverted secondary stackable menu">
 
-            <!--header是指定该元素为标题，teal是颜色
-            "item" 类通常用于指定该元素为可交互的列表项或卡片，可以响应用户的点击事件或鼠标悬停事件。
-            通过在 <h2> 元素中使用 "item" 类，可以将标题 "MyBlog" 作为一个单独的列表项或卡片显示，并提供与之交互的功能和操作。
-            例如，可以在标题上添加链接，使用户可以单击标题以转到网站的主页或其他相关页面。-->
             <h2 class="ui teal header item">管理后台</h2>
-            <a href="#" th:href="@{/admin/blogs}" class="item"><i class="home icon"></i> MyBlog</a>
-            <a href="#" th:href="@{/type}" class="item"><i class="idea icon"></i> 分类</a>
-            <a href="#" th:href="@{/tags}" class="item"><i class="tags icon"></i> 标签</a>
+            <a href="/index"  class="item"><i class="home icon"></i> MyBlog</a>
+            <a href="/type"  class="item"><i class="idea icon"></i> 分類</a>
+            <a href="/input"  class="item"><i class="tags icon"></i> 編集</a>
+            <a href="/input"  class="item"><i class="tags icon"></i> 自己紹介</a>
 
             <div class="right dropdown menu">
                 <!--transparent：透明的-->
@@ -47,7 +34,7 @@
                     </div>
                     <i class=" dropdown icon"></i>
                     <div class="ui menu">
-                        <a href="#" th:href="@{/admin/logout}" class="ui inverted item">注销</a>
+                        <a href="admin/logout"  class="ui inverted item">ログアウト</a>
                     </div>
                 </div>
             </div>
@@ -59,7 +46,7 @@
     <div class="ui container">
         <div class="ui success large message ">
             <h3>Hi,</h3>
-            <p>BigFish，欢迎登录</p>
+            <p>編集成功</p>
         </div>
         <img src="https://unsplash.it/1000/400?image=4" alt="" class="ui rounded bordered fluid image">
 

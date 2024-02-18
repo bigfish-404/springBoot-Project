@@ -1,84 +1,84 @@
+<%@ page import="com.bigfish.blog.po.Input" %>
+<%@ page import="java.util.Optional" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name = "viewport" content="with = device - width, initial - scale = 1.0">
-    <title>タグ</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
     <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}" >
 </head>
 <body>
 
 <!--メニュー-->
-    <nav class="ui inverted attached segment">
-        <div class="ui container">
-            <div class="ui inverted secondary menu">
-                <h2 class="ui teal header item">BigFish</h2>
-                <a href="#" class="item"><i class="icon home"></i>ホームページ</a>
-                <a href="#" class="item"><i class="icon idea"></i>分類</a>
-                <a href="#" class="item"><i class="icon tags"></i>タグ</a>
-                <a href="#" class="item"><i class="icon info"></i>自己紹介</a>
+<nav class="ui inverted attached segment">
+    <div class="ui container">
+        <div class="ui inverted secondary menu">
+            <h2 class="ui teal header item">BigFish</h2>
+            <a href="/index" class="item"><i class="icon home"></i>ホームページ</a>
+            <a href="/backstage" class="item"><i class="icon idea"></i>分類</a>
+            <a href="/input" class="item"><i class="icon tags"></i>編集</a>
+            <a href="#" class="item"><i class="icon info"></i>自己紹介</a>
 
-                <!--検索ボックス-->
-                <div class="right item">
-                    <div class="ui icon input">
-                        <input type="text" placeholder="Search...">
-                        <i class="search link icon"></i>
-                    </div>
+            <!--検索ボックス-->
+            <div class="right item">
+                <div class="ui icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search link icon"></i>
                 </div>
-
             </div>
+
         </div>
-    </nav>
+    </div>
+</nav>
 
 <!--主体-->
 <div class="m-container-small m-padded-tb">
     <div class="ui container">
         <div class="ui top attached segment">
             <div class="ui mini horizontal link list">
+                <%
+
+                    Optional<Input> articleMessage = (Optional<Input>) request.getAttribute("articleMessage");
+
+                    if (articleMessage != null && !articleMessage.isEmpty()){
+                        Input articles =  articleMessage.get();
+                %>
                 <div class="item">
-                    <img src="../static/images/2.jpg" th:src="@{/images/2.jpg}" alt="" class="ui avatar image">
+                    <img src="../static/images/2.jpg"  alt="" class="ui avatar image">
                     <div class="content"><a href="#" class="header">BigFish</a> </div>
-                </div>
-                <div class="item">
-                    <i class="calendar icon"></i>2023-04-30
-                </div>
-                <div class="item">
-                    <i class="eye icon"></i>200
                 </div>
             </div>
         </div>
         <div class="ui center aligned attached segment">
-            <img src="../static/images/4.jpg"  th:src="@{/images/4.jpg}" class="ui rounded images" style="width: 400px" >
+            <img src="<%= articles.getFirstPicture() %>"  class="ui rounded images" style="width: 400px" >
 
         </div>
         <div class="ui  attached segment">
             <div class="ui right aligned basic segment">
-                <div class="ui basic orange label">原创</div>
+                <div class="ui basic orange label"><%= articles.getFlag() %></div>
             </div>
-            <h2 class="ui center aligned header">GPT4</h2>
-            <div class="m-margin-tb">
-                We’ve created GPT-4, the latest milestone in OpenAI’s effort in scaling up deep learning. GPT-4 is a large multimodal model
-                (accepting image and text inputs, emitting text outputs) that, while less capable than humans in many real-world scenarios,
-                exhibits human-level performance on various professional and academic benchmarks. For example, it passes a simulated bar exam
-                with a score around the top 10% of test takers; in contrast, GPT-3.5’s score was around the bottom 10%. We’ve spent 6 months
-                iteratively aligning GPT-4 using lessons from our adversarial testing program as well as ChatGPT,
-                resulting in our best-ever results (though far from perfect) on factuality, steerability, and refusing to go outside of guardrails.
-                Over the past two years, we rebuilt our entire deep learning stack and, together with Azure, co-designed a supercomputer from
-                the ground up for our workload. A year ago, we trained GPT-3.5 as a first “test run” of the system. We found and fixed some bugs
-                and improved our theoretical foundations. As a result, our GPT-4 training run was (for us at least!) unprecedentedly stable,
-                becoming our first large model whose training performance we were able to accurately predict ahead of time. As we continue to
-                focus on reliable scaling, we aim to hone our methodology to help us predict and prepare for future capabilities increasingly
-                far in advance—something we view as critical for safety.
-            </div>
-            <div class="ui basic teal left pointing label">行业介绍</div>
+            <h2 class="ui center aligned header"><%= articles.getTitle() %></h2>
+            <br>
+            <div class="m-margin-tb"><%= articles.getContent() %></div>
+            <br>
+            <br>
+            <br>
+
         </div>
         <div class="ui attached positive message">
             <div class="ui middle aligned grid">
                 <div class="eleven wide column">
                     <h4>作者：BigFish</h4>
-                    <h4>发表时间：2023-04-30</h4>
+                    <h4><%= articles.getUpdateTime() %></h4>
                 </div>
+                <%
+
+                    }
+                %>
                 <div class="five wide column">
                     <a>
                         <img src="../static/images/WeChat.jpg"  th:src="@{/images/WeChat.jpg}" class="ui rounded right floated images" alt="" style="width: 120px">
@@ -172,32 +172,32 @@
     </div>
 </div>
 
-    <!--footer-->
-    <footer class="ui inverted vertical segment m-padded-tb-massive">
-        <div class="ui center aligned container">
-            <div class="ui inverted divided grid">
-                <div class="four wide column ">
-                    <div class="item">
-                        <img src="../static/images/WeChat.jpg" class="ui rounded image " alt="" style="width: 180px">
-                    </div>
+<!--footer-->
+<footer class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided grid">
+            <div class="four wide column ">
+                <div class="item">
+                    <img src="../static/images/WeChat.jpg" class="ui rounded image " alt="" style="width: 180px">
                 </div>
-                <div class="four wide column">
-                    <h4 class="ui inverted header m-opacity-mini">最新情報</h4>
-                    <div class="ui inverted link list">
-                        <a href="#" class="item">User Story</a>
-                        <a href="#" class="item">ITについて</a>
-                        <a href="#" class="item">自己紹介</a>
-                    </div>
+            </div>
+            <div class="four wide column">
+                <h4 class="ui inverted header m-opacity-mini">最新情報</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">User Story</a>
+                    <a href="#" class="item">ITについて</a>
+                    <a href="#" class="item">自己紹介</a>
                 </div>
-                <div class="seven wide column">
-                    <h4 class="ui inverted header">SNS情報</h4>
-                    <div class="ui inverted link list">
-                        <a href="#" class="item">https://github.com/bigfish-404/springBoot-Project</a>
-                    </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header">SNS情報</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">https://github.com/bigfish-404/springBoot-Project</a>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
 
 

@@ -21,7 +21,7 @@ public class LogAspect {
 
     private final Logger logger =  LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("execution(* com.bigfish.blog.web.*.*(..))")
+    @Pointcut("execution(* main.webapp.*.*(..))")
     public void log(){}
 
     @Before("log()")

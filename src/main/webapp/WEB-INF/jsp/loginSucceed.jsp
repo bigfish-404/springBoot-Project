@@ -4,18 +4,11 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <!--meta 原标签-->
 
-    <!-- - "content=device-width" 将视口的宽度设置为正在查看网页的设备的宽度。这意味着网页将根据设备的宽度调整其布局，而不是使用固定宽度。
-    - "initial-scale=1.0" 将网页的初始缩放级别设置为100%。这确保了网页在首次加载时以其原始大小显示。
-    - content（目录） device(装置）  initial（初始） scale（改变尺寸大小）-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>登录成功</title>
+    <title>LoginSucceed</title>
 
-    <!--导入Semantic UI 框架，在首尾都需要引入-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
-
-    <!--必须引入css代码的位置-->
     <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}" >
 </head>
 <body>
@@ -27,9 +20,9 @@
         <div class="ui inverted secondary stackable menu">
 
             <h2 class="ui teal header item">管理后台</h2>
-            <a href="#" th:href="@{/admin/blogs}" class="item"><i class="home icon"></i> MyBlog</a>
-            <a href="#" th:href="@{/type}" class="item"><i class="idea icon"></i> 分类</a>
-            <a href="#" th:href="@{/tags}" class="item"><i class="tags icon"></i> 标签</a>
+            <a href="/index"  class="item"><i class="home icon"></i> MyBlog</a>
+            <a href="/type"  class="item"><i class="idea icon"></i> 分類</a>
+            <a href="/input"  class="item"><i class="tags icon"></i> 自己紹介</a>
 
             <div class="right dropdown menu">
                 <!--transparent：透明的-->

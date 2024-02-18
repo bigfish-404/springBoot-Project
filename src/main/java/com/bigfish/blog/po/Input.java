@@ -18,7 +18,6 @@ public class Input {
     private String content;
     //标记
     private String flag;
-    private String category;
     //首图
     private String firstPicture;
     //评论开启
@@ -96,13 +95,6 @@ public class Input {
         return preview;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
 
     public void setPreview(String preview) {
         this.preview = preview;
