@@ -13,54 +13,42 @@
 </head>
 <body>
 
-<nav class="ui inverted attached segment m-padded-tb-mini">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-    <div class="ui container">
 
-        <div class="ui inverted secondary stackable menu">
 
-            <h2 class="ui teal header item">管理后台</h2>
-            <a href="/index"  class="item"><i class="home icon"></i> MyBlog</a>
-            <a href="/type"  class="item"><i class="idea icon"></i> 分類</a>
-            <a href="/input"  class="item"><i class="tags icon"></i> 自己紹介</a>
-
-            <div class="right dropdown menu">
-                <!--transparent：透明的-->
-                <div class="ui inline dropdown item">
-                    <div class="text">
-                        <img class="ui avatar image" src="../web/images/1.jpg" alt="">
-                        BigFish
-                    </div>
-                    <i class=" dropdown icon"></i>
-                    <div class="ui menu">
-                        <a href="admin/logout"  class="ui inverted item">ログアウト</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
 
 <div class="m-container-small m-padded-tb-big">
     <div class="ui container">
-        <div class="ui success large message ">
-            <h3>Hi,</h3>
-            <p>BigFish，ログインSucceed</p>
-        </div>
-        <img src="https://unsplash.it/1000/400?image=4" alt="" class="ui rounded bordered fluid image">
-
+        <head>
+            <meta charset="UTF-8">
+            <title>500</title>
+        </head>
+        <body>
+        <h1>500</h1>
+        </body>
     </div>
 </div>
-<!--底部内容-->
-<!--footer代表底部的的意思，都是实现分块，但是名字不同增加代码的可读性-->
-<!--"vertical segment" 类用于指定该元素为垂直方向的段落，并提供适当的上下边距。-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <footer class="ui inverted vertical segment m-padded-tb-massive">
 
-    <!--"center aligned" 类用于指定该元素在水平方向上居中对齐。
-    "container" 类用于指定该元素为一个容器，具有最大宽度并在页面中居中-->
     <div class="ui center aligned container">
 
-        <!--grid:网格布局，一共16份 three wide column 代表这一块占三份-->
         <div class="ui inverted divided grid">
             <div class="three wide column">
                 <img src="../../static/images/WeChat.jpg" th:src="@{/images/WeChat.jpg}" class="ui rounded images" alt="" style="width: 120px">
